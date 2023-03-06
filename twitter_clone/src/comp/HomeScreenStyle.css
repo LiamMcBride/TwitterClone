@@ -1,0 +1,133 @@
+
+
+.navTab {
+    color: #fff;
+    height: 52px;
+    font-weight: bold;
+    line-height: 52px;
+    font-size: 20px;
+    border-radius: 25px;
+    text-align: center;
+    width: 225px;
+    margin: 10px
+}
+
+body {
+    position: relative;
+}
+
+.main-feed {
+    display: inline-block;
+    height: 100%;
+    width: 55%;
+    top: 0px;
+    position: absolute;
+    left: 15%;
+    border-right: #16181C solid 2px;
+    border-left: #16181C solid 2px;
+}
+
+.main-feed h1 {
+    margin: 36px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+
+
+}
+
+.search-feed {
+    position: absolute;
+    right: 0;
+    color: white;
+    height: 100%;
+    width: 20%;
+    top: 0px;
+}
+
+.search-feed input {
+    border-radius: 25px;
+    width: 80%;
+    background-color: #16181C;
+    border: none;
+    height: 42px;
+    color: rgba(255, 255, 255, 0.43);
+    text-align: center;
+}
+
+.navTab:hover {
+    background-color: rgba(255, 255, 255, 0.209);
+}
+
+.sidebar{
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    top: 0px;
+}
+
+.sidebar .sidebar-footer {
+    position: absolute;
+    bottom: 0px;
+    display: inline-grid;
+    color: #fff;
+}
+
+.profile-badge {
+    width: 100%;
+    height: 65px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.5fr;
+    margin: 0 auto;
+    grid-gap: 15px;
+}
+
+.profile-badge img {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    margin: auto auto;
+    border-radius: 50%;
+}
+
+.profile-badge h1 {
+    font-size: 15px;
+    color: white;
+    margin: 0px;
+}
+
+.profile-badge h2 {
+    display: inline;
+    font-size: 15px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.479); 
+    margin: 0px; 
+}
+
+.profile-badge div {
+    margin: auto 0;
+    color: white;
+}
+
+.post {
+    color: #fff;
+    font-size: 15px;
+    border-top: #16181C solid 2px;
+    border-bottom: #16181C solid 2px;
+    padding: 12px;
+}
+
+.post h1 {
+    font-size: 15px;
+    display: inline;
+}
+
+.post h2 {
+    font-size: 15px;
+    display: inline;
+}
+
+.post div {
+    font-size: 15px;
+    display: inline;
+}
