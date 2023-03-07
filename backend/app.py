@@ -1,5 +1,7 @@
 import re
 from datetime import datetime
+from tweet import Tweet
+from user import User
 
 from flask import Flask
 
@@ -26,4 +28,22 @@ def hello_there(name):
         clean_name = "Friend"
 
     content = "Hello there, " + clean_name + "! It's " + formatted_now
+    
     return content
+
+@app.route("/tweet/<id>")
+def get_tweet(id):
+    tweet = Tweet({"id": id, "user-id": "1033", "text": "Just an update, I have the flask server working finally!", "time-stamp": "03-03-2023 11:56:00"})
+    user = User({"id": id, "first-name": "Liam", "last-name": "McBride", "username": "BlueLetter", "email": "mailmcbride56@gmail.com", "time-stamp": "03-03-2023 11:56:00"})
+    
+    retDict = {
+        "tweet": tweet.get_dict(),
+        "user": user.get_dict()
+    }
+
+    return retDict 
+
+@app.route("/user/<id>")
+def get_user(id):
+    user = User({"id": id, "first-name": "Liam", "last-name": "McBride", "username": "BlueLetter", "email": "mailmcbride56@gmail.com", "time-stamp": "03-03-2023 11:56:00"})
+    return user.get_dict()

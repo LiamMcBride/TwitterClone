@@ -42,6 +42,7 @@ body {
     color: white;
     height: 100%;
     width: 20%;
+    padding: 4px;
     top: 0px;
 }
 
@@ -52,7 +53,8 @@ body {
     border: none;
     height: 42px;
     color: rgba(255, 255, 255, 0.43);
-    text-align: center;
+    text-align: left;
+    font-size: 15px;
 }
 
 .navTab:hover {
@@ -119,11 +121,16 @@ body {
 
 .post h1 {
     font-size: 15px;
+    margin: 0px;
     display: inline;
 }
 
 .post h2 {
     font-size: 15px;
+    margin: 0px;
+    margin-left: 12px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.552);
     display: inline;
 }
 

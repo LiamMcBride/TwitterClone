@@ -1,9 +1,12 @@
 
 
+import React, { useState } from 'react';
 import '../App.css';
 import { background } from '../Colors';
+import { getTweet } from '../services/HomeFeedCall';
 import "./HomeScreenStyle.css";
 import ProfileBadge from './ProfileIcon';
+import TweetComp from './Tweet';
 const backgroundStyle = {
     backgroundColor: background,
     height: "100vh",
@@ -30,7 +33,14 @@ const navTabStyleOnHover = {
 
 
 
-function HomeScreen() {
+function HomeScreen()  {
+
+    const [tweets, setTweets] = useState([])
+
+    let tweet = 0;
+    getTweet(1).then(resp => console.log(resp));
+    console.log(tweet);
+
   return (
     <div style={backgroundStyle}>
         <div className="sidebar">
@@ -84,19 +94,7 @@ function HomeScreen() {
         </div>
         <div className="main-feed">
             <h1>Home</h1>
-            <div className="post">
-                <img></img>
-                <div></div>
-                <h1>Salman Chishti</h1>
-                <h2>@SalmanMKC * 2h</h2>
-                <div>***</div>
-                <p>As a developer, do you prefer learning from videos, blogs, or books?</p>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            {TweetComp(tweet)}
         </div>
         <div className="search-feed">
             <input type="text" defaultValue={"Search Twitter"}></input>
