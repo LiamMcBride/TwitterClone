@@ -46,15 +46,27 @@ body {
     top: 0px;
 }
 
-.search-feed input {
+/* .search-feed .search-bar {
+    background-color: #16181C;
     border-radius: 25px;
     width: 80%;
-    background-color: #16181C;
+    border: 1px solid blue;
+} */
+
+/* .search-feed input {
+    width: 80%;
+    background-color: rgba(22,24,28,0);
     border: none;
     height: 42px;
     color: rgba(255, 255, 255, 0.43);
     text-align: left;
+    margin-left: 20px;
     font-size: 15px;
+} */
+
+.search-feed input:focus {
+    border: none;
+    outline: none;
 }
 
 .navTab:hover {
@@ -137,4 +149,56 @@ body {
 .post div {
     font-size: 15px;
     display: inline;
+}
+
+.whats-happening-feed {
+    background-color: #16181C;
+    border-radius: 10px;
+    padding: 16px 0 0 0;
+    margin-top: 16px;
+    width: 80%;
+    /* padding: 16px; */
+}
+
+.whats-happening-feed h1 {
+    margin: 16px;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.whats-happening-feed h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.whats-happening-feed h3 {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.story {
+    /* margin-top: 24px;
+    margin-bottom: 24px; */
+    padding: 12px 0;
+    padding-left: 16px;
+}
+
+.story:hover {
+    background-color: rgba(255,255,255, 0.05);
+    /* background-color: rgb(37, 42, 47); */
+    cursor: pointer;
+}
+
+.whats-happening-feed a {
+    color: #1DA1F2;
+    font-weight: 600;
+    font-size: 14px;
+    /* margin-left: 16px; */
+}
+
+.whats-happening-feed a:link, .whats-happening-feed a:visited, .whats-happening-feed a:hover, .whats-happening-feed a:active {
+    text-decoration: none;
 }

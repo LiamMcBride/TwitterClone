@@ -97,10 +97,107 @@ function HomeScreen()  {
             {TweetComp(tweet)}
         </div>
         <div className="search-feed">
-            <input type="text" defaultValue={"Search Twitter"}></input>
+            {SearchBar()}
+            <div className="whats-happening-feed">
+                <h1>What's happening</h1>
+                <div className="story">
+                    <h3>NHL * LIVE</h3>
+                    <h2>Ducks at Canucks</h2>
+                    <h3>And that's it. They're just there.</h3>
+                </div>
+                <div className="story">
+                    <h3>NHL * LIVE</h3>
+                    <h2>Ducks at Canucks</h2>
+                    <h3>And that's it. They're just there.</h3>
+                </div>
+                <div className="story">
+                    <h3>NHL * LIVE</h3>
+                    <h2>Ducks at Canucks</h2>
+                    <h3>And that's it. They're just there.</h3>
+                </div>
+                <div className="story">
+                    <h3>NHL * LIVE</h3>
+                    <h2>Ducks at Canucks</h2>
+                    <h3>And that's it. They're just there.</h3>
+                </div>
+                <div className="story">
+                    <a href="www.google.com">Show more</a>
+                </div>
+            </div>
+            <div className="whats-happening-feed">
+                <h1>Who to follow</h1>
+                <div className="story">
+                    <h2>Grizzy</h2>
+                    <h3>@SoGrizzy</h3>
+                </div>
+                <div className="story">
+                    <h2>Ted Nivison</h2>
+                    <h3>@TedNivison</h3>
+                </div>
+                <div className="story">
+                    <h2>ScaleFlux</h2>
+                    <h3>@ScaleFlux</h3>
+                </div>
+                <div className="story">
+                    <a href="www.google.com">Show more</a>
+                </div>
+            </div>
         </div>
     </div>
   );
 }
 
 export default HomeScreen;
+
+function SearchBar(){
+    const [focused, setFocused] = useState(false);
+
+    const defaultBarStyle = {
+    //     background-color: #16181C;
+    // border-radius: 25px;
+    // width: 80%;
+        backgroundColor: "#16181C",
+        borderRadius: "25px",
+        width: "80%"
+    }
+
+    const focusedBarStyle = {
+        backgroundColor: "#000",
+        outline: "solid #1DA1F2 1px",
+        backgroundColor: "#000",
+        borderRadius: "25px",
+        width: "80%"
+    }
+
+    const inputStyle = {
+        width: "80%",
+        backgroundColor: "rgba(22,24,28,0)",
+        border: "none",
+        height: "42px",
+        textAlign: "left",
+        marginLeft: "20px",
+        fontSize: "15px",
+        color: "rgba(255,255,255,0.4)"
+    }
+    
+    const inputStyleSelected = {
+        width: "80%",
+        backgroundColor: "black",
+        border: "none",
+        height: "42px",
+        textAlign: "left",
+        marginLeft: "20px",
+        fontSize: "15px",
+        color: "rgba(255,255,255,0.4)"
+
+
+    }
+
+    return (
+        <div className="search-bar" style={focused ? focusedBarStyle : defaultBarStyle}>
+            <input style={focused ? inputStyleSelected : inputStyle} onBlur={() => setFocused(false)} 
+            onFocus={() => setFocused(true)} type="text" defaultValue={"Search Twitter"}></input>
+        </div>
+
+    );
+}
