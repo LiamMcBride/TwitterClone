@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../App.css';
 import "./HomeScreenStyle.css";
 
-export default function TweetComp(tweet) {
+export function TweetComp(tweet) {
 
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -84,4 +84,13 @@ const dateObj = (timestamp) => {
 
     }
 
+}
+
+export function PromptTweet(){
+    return (
+        <div className="prompt-tweet">
+            <img className="profile-image" src="./image/1"></img>
+            <input type="text" placeholder="What's happening?"></input>
+        </div>
+    );
 }

@@ -6,7 +6,7 @@ import { background } from '../Colors';
 import { getTweet } from '../services/HomeFeedCall';
 import "./HomeScreenStyle.css";
 import ProfileBadge from './ProfileIcon';
-import TweetComp from './Tweet';
+import { PromptTweet, TweetComp } from './Tweet';
 const backgroundStyle = {
     backgroundColor: background,
     height: "100vh",
@@ -94,6 +94,7 @@ function HomeScreen()  {
         </div>
         <div className="main-feed">
             <h1>Home</h1>
+            {PromptTweet()}
             {TweetComp(tweet)}
         </div>
         <div className="search-feed">
@@ -196,7 +197,7 @@ function SearchBar(){
     return (
         <div className="search-bar" style={focused ? focusedBarStyle : defaultBarStyle}>
             <input style={focused ? inputStyleSelected : inputStyle} onBlur={() => setFocused(false)} 
-            onFocus={() => setFocused(true)} type="text" defaultValue={"Search Twitter"}></input>
+            onFocus={() => setFocused(true)} type="text" placeholder={"Search Twitter"}></input>
         </div>
 
     );

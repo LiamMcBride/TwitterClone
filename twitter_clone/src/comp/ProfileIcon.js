@@ -32,7 +32,7 @@ const navTabStyleOnHover = {
 function ProfileBadge() {
   return (
         <div className="profile-badge">
-            <img>
+            <img src="./image/1">
 
             </img>
             <div>

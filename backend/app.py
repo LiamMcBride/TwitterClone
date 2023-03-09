@@ -3,7 +3,7 @@ from datetime import datetime
 from tweet import Tweet
 from user import User
 
-from flask import Flask
+from flask import Flask, send_file
 
 app = Flask(__name__)
 
@@ -47,3 +47,7 @@ def get_tweet(id):
 def get_user(id):
     user = User({"id": id, "first-name": "Liam", "last-name": "McBride", "username": "BlueLetter", "email": "mailmcbride56@gmail.com", "time-stamp": "03-03-2023 11:56:00"})
     return user.get_dict()
+
+@app.route("/image/<id>")
+def get_image(id):
+    return send_file("progile-img.png", mimetype='image/png')
