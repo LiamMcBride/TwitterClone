@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 import "./HomeScreenStyle.css";
 
-export function ToggleSwitch(){
+export function ToggleSwitch() {
     const [selected, setSelected] = useState(0);
 
     return (

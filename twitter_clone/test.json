@@ -1,0 +1,48 @@
+{
+    "tweets": [
+        {
+            "id": 2,
+            "text": "test1",
+            "time-stamp": "03/14/2023 22:47:52",
+            "user-id": 1
+        },
+        {
+            "id": 3,
+            "text": "This is my third tweet with the id of 2!",
+            "time-stamp": "03/14/2023 22:48:25",
+            "user-id": 1
+        },
+        {
+            "id": 4,
+            "text": "I can now see my tweets",
+            "time-stamp": "03/14/2023 23:17:35",
+            "user-id": 1
+        },
+        {
+            "id": 5,
+            "text": "will this update?",
+            "time-stamp": "03/14/2023 23:19:53",
+            "user-id": 1
+        },
+        {
+            "id": 6,
+            "text": "New tweet",
+            "time-stamp": "03/15/2023 12:30:01",
+            "user-id": 1
+        },
+        {
+            "id": 7,
+            "text": "Hello",
+            "time-stamp": "03/15/2023 12:30:15",
+            "user-id": 1
+        }
+    ],
+    "user": {
+        "email": "mailmcbride@vt.edu",
+        "first-name": "Liam",
+        "id": 1,
+        "last-name": "McBride",
+        "time-stamp": "03/14/2023 12:00:00",
+        "username": "mailmcbride"
+    }
+}
