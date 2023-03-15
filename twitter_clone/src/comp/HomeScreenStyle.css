@@ -14,6 +14,7 @@
 
 body {
     position: relative;
+    margin-top: 0px;
 }
 
 .main-feed {
@@ -25,6 +26,7 @@ body {
     left: 25%;
     border-right: #16181C solid 2px;
     border-left: #16181C solid 2px;
+    overflow: scroll;
 }
 
 .main-feed h1 {
@@ -112,16 +114,19 @@ body {
     height: 50px;
     margin: auto auto;
     border-radius: 50%;
-    display: inline-block;
+    display: inline;
+}
+
+.prompt-tweet {
+    vertical-align: top;
 }
 
 .prompt-tweet input{
     /* height: 50px; */
-    margin-top: auto;
-    margin-bottom: 15px;
     background-color: #000;
     border: none;
     font-size: 20px;
+    height: 25px;
 }
 
 .profile-badge h1 {

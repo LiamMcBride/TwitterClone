@@ -24,14 +24,43 @@ export function TweetComp(tweet) {
 
     return (
         <div className="post">
-        <img></img>
-        <div></div>
-        <h1>{loading ? "loading..." : `${data['user']["first-name"]} ${data['user']["last-name"]}`}</h1>
-        <h2>{loading ? "loading..." : `@${data['user']["username"]}`}</h2>
-        <h2>{loading ? " " : `${dateObj(data['tweet']['time-stamp']).date.monthName} ${dateObj(data['tweet']['time-stamp']).date.day}`}</h2>
+        <div>
+            <img className="profile-image" src="./image/1"></img>
+            <div style={{}}>
+                <h1>{loading ? "loading..." : `${data['user']["first-name"]} ${data['user']["last-name"]}`}</h1>
+                <h2>{loading ? "loading..." : `@${data['user']["username"]}`}</h2>
+                <h2>{loading ? " " : `${dateObj(data['tweet']['time-stamp']).date.monthName} ${dateObj(data['tweet']['time-stamp']).date.day}`}</h2>
+            </div>
+        </div>
 
         <div>***</div>
         <p>{loading ? "loading..." : data['tweet']["text"]}</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    );
+}
+
+
+export function StaticTweetComp(data) {
+
+    return (
+        <div className="post">
+        <div>
+            <img className="profile-image" src="./image/1"></img>
+            <div style={{}}>
+                <h1>{data['user'] == null ? "loading" : `${data['user']["first-name"]} ${data['user']["last-name"]}`}</h1>
+                <h2>{data['user'] == null ? "loading" : `@${data['user']["username"]}`}</h2>
+                <h2>{data['user'] == null ? "loading" : `${dateObj(data['tweet']['time-stamp']).date.monthName} ${dateObj(data['tweet']['time-stamp']).date.day} ${dateObj(data['tweet']['time-stamp']).date.year}`}</h2>
+                {/* //dateObj(data['tweet']['time-stamp']).date.monthName} ${dateObj(data['tweet']['time-stamp']).date.day */}
+                {/* June 20, 2020 */}
+            </div>
+        </div>
+
+        <p>{data['user'] == null ? "loading" : data['tweet']["text"]}</p>
         <div></div>
         <div></div>
         <div></div>
@@ -57,8 +86,8 @@ const dateObj = (timestamp) => {
         "11": "Nov",
         "12": "Dec",
     }
-    let day = timestamp.slice(0, 2)
-    let month = timestamp.slice(3, 5)
+    let month = timestamp.slice(0, 2)
+    let day = timestamp.slice(3, 5)
     let year = timestamp.slice(6, 10)
     
     let hour = timestamp.slice(11, 13)

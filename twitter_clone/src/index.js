@@ -5,8 +5,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // <Router></Router>
   <React.StrictMode>
     <HomeScreen />
+    {/* <LoginScreen /> */}
+    {/* <HomeScreen /> */}
+    {/* <SignupScreen /> */}
     {/* <ProfileBadge /> */}
   </React.StrictMode>
 );

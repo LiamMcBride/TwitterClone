@@ -1,12 +1,11 @@
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { background } from '../Colors';
-import { getTweet } from '../services/HomeFeedCall';
 import "./HomeScreenStyle.css";
 import ProfileBadge from './ProfileIcon';
-import { PromptTweet, TweetComp } from './Tweet';
+import { PromptTweet, StaticTweetComp } from './Tweet';
 const backgroundStyle = {
     backgroundColor: background,
     height: "100vh",
@@ -35,11 +34,31 @@ const navTabStyleOnHover = {
 
 function HomeScreen()  {
 
-    const [tweets, setTweets] = useState([])
+    const [tweets, setTweets] = useState([null])
+    const [user, setUser] = useState(null)
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        fetch("home", {
+            method: "POST",
+            body: JSON.stringify({
+              userId: 1
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+                console.log(data)
+                setTweets(data.tweets)
+                setUser(data.user)
+            });
+    },[count]);
 
     let tweet = 0;
-    getTweet(1).then(resp => console.log(resp));
-    console.log(tweet);
+    // getTweet(1).then(resp => console.log(resp));
+    // console.log(tweet);
 
   return (
     <div style={backgroundStyle}>
@@ -69,7 +88,79 @@ function HomeScreen()  {
             <div className="navTab">
                 More
             </div>
-            <div style={{
+            <button onClick={() => {
+                /*
+                fetch('https://reqbin.com/echo/post/json', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                    body: JSON.stringify({ "id": 78912 })
+                })
+                .then(response => response.json())
+                .then(response => console.log(JSON.stringify(response)))
+                */
+                fetch("signup", {
+                    method: "POST",
+                    body: JSON.stringify({
+                      firstName: "test3",
+                      lastName: "test3l",
+                      username: "test3",
+                      email: "test3@gmail.com"
+                    }),
+                    headers: {
+                      "Content-type": "application/json; charset=UTF-8"
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => console.log(data));
+            }}>Click me</button>
+            <br></br>
+            <button onClick={() => {
+                /*
+                fetch('https://reqbin.com/echo/post/json', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                    body: JSON.stringify({ "id": 78912 })
+                })
+                .then(response => response.json())
+                .then(response => console.log(JSON.stringify(response)))
+                */
+                fetch("home", {
+                    method: "POST",
+                    body: JSON.stringify({
+                      userId: 1
+                    }),
+                    headers: {
+                      "Content-type": "application/json; charset=UTF-8"
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => console.log(data));
+            }}>Click me</button>
+            <br></br>
+            <input type="text" id="tweet-content" placeholder='tweet'></input>                
+            <div onClick={() => {
+                fetch("publishtweet", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        content: document.getElementById("tweet-content").value,
+                        userId: 1
+                    }),
+                    headers: {
+                      "Content-type": "application/json; charset=UTF-8"
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                        console.log(data)
+                        setCount(count + 1)
+                    });
+            }} style={{
                 "color": "white",
                 "background": "#1F9BF0",
                 "display": "block",
@@ -79,10 +170,10 @@ function HomeScreen()  {
                 "margin": "12px",
                 "borderRadius": "25px",
                 "fontWeight": "bold",
-                "font-family": "Arial, Helvetica, sans-serif",
+                "fontFamily": "Arial, Helvetica, sans-serif",
                 "fontSize": "17px",
-                "margin-top": "auto",
-                "margin-bottom": "auto",
+                "marginTop": "auto",
+                "marginBottom": "auto",
                 "alignItems": "center",
                 "lineHeight": "52px"
             }}>
@@ -95,7 +186,12 @@ function HomeScreen()  {
         <div className="main-feed">
             <h1>Home</h1>
             {PromptTweet()}
-            {TweetComp(tweet)}
+            {tweets.map((tweet) => {
+                return StaticTweetComp({
+                    "user": user,
+                    "tweet": tweet
+                })
+            })}
         </div>
         <div className="search-feed">
             {SearchBar()}

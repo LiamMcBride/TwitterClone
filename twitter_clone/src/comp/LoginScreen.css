@@ -1,0 +1,118 @@
+.login-div {
+    flex:auto;
+    color: white;
+    background-color: black;
+    width: 50%;
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.login-div h1 {
+    font-size: 32px;
+    font-weight: bolder;
+    margin-top: 36px;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.x-button{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    padding: 4px;
+    user-select: none;
+    color: white;
+    text-align: center;
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.x-button:hover{
+    background-color: rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.white-logo-button{
+    background-color: white;
+    width: 250px;
+    border-radius: 25px;
+    height: 36px;
+    color: black;
+    text-align: center;
+    line-height: 36px;
+    margin: 12px;
+    font-weight: bold;
+}
+
+.white-logo-button:hover{
+    background-color: rgba(255,255,255,0.9);
+    cursor: pointer;
+}
+
+.black-logo-button:hover{
+    background-color: rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.black-logo-button {
+    color: white;
+    background-color: black;
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+}
+
+.login-div hr{
+    display: inline-block;
+    width: 100px;
+    margin: 12px;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+input {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    margin: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 250px;
+    height: 48px;
+    line-height: 48px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.modal-footer {
+    font-size: 14px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 36px;
+}
+
+.modal-footer a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+.modal-footer a:hover {
+    color: #1DA1F2;
+    text-decoration: underline;
+}
