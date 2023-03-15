@@ -1,36 +1,75 @@
-
+html {
+    min-height: 100vh !important;
+    margin: 0;
+    padding: 0;
+}
 
 .navTab {
     color: #fff;
     height: 52px;
+    padding-left: 24px;
+    padding-right: 24px;
     font-weight: bold;
     line-height: 52px;
     font-size: 20px;
     border-radius: 25px;
     text-align: left;
-    width: 225px;
-    margin: 10px
+    margin: 4px;
+    display: inline-block;
+}
+
+#root {
+    min-height: 100vh !important;
+}
+
+.homescreen-div{
+    min-height: 100vh !important;
+    width: 90%;
+    background-color: #000;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 20% 45% 35%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body {
     position: relative;
-    margin-top: 0px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    min-height: 100vh !important;
+    max-height: 100vh;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .main-feed {
-    display: inline-block;
-    height: 100%;
-    width: 40%;
-    top: 0px;
-    position: absolute;
-    left: 25%;
+    /* display: inline-block; */
+    /* height: 100vh; */
+    /* width: 40%; */
+    /* top: 0px; */
+    /* position: absolute; */
+    /* left: 25%; */
     border-right: #16181C solid 2px;
     border-left: #16181C solid 2px;
+}
+
+.scroll-div {
     overflow: scroll;
+    height: 95vh;
+}
+
+.spacer {
+    display: block;
+    height: 100px;
 }
 
 .main-feed h1 {
-    margin: 36px;
+    margin: 14px;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
@@ -38,15 +77,39 @@ body {
 
 }
 
+.home-toggle-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    user-select: none;
+}
+
+.home-toggle-div div {
+    cursor: pointer;
+    line-height: 50px;
+    color: rgba(255,255,255,.4);
+    text-align: center;
+    font-weight: bold;
+}
+
+.home-toggle-div .selected {
+    color: rgba(255,255,255,1.0);
+    border-bottom: 2px #1DA1F2 solid;
+}
+
+.home-toggle-div div:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .search-feed {
-    position: absolute;
+    /* position: absolute; */
     /* right: 0; */
-    left: 67%;
+    /* left: 67%; */
     color: white;
-    height: 100%;
-    width: 25%;
+    /* height: 100%; */
+    /* width: 25%; */
     padding: 4px;
-    top: 0px;
+    /* top: 0px; */
 }
 
 /* .search-feed .search-bar {
@@ -77,12 +140,17 @@ body {
 }
 
 .sidebar{
-    height: 100%;
-    position: absolute;
-    width: 15%;
-    top: 0px;
-    left: 9%;
+    /* height: 100%; */
+    /* position: absolute; */
+    /* width: 15%; */
+    /* top: 0px;
+    left: 9%; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     */
 }
+
 
 .sidebar .sidebar-footer {
     position: absolute;
@@ -119,15 +187,98 @@ body {
 
 .prompt-tweet {
     vertical-align: top;
+    user-select: none;
+
+}
+
+.prompt-tweet .profile-image {
+    margin: 12px;
+    display: inline-block;
+}
+
+.prompt-tweet .top-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.prompt-tweet .bottom-row {
+    height: 45px;
+    margin-left: 74px;
+    margin-right: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tweet-button {
+    background-color: #1DA1F2;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: auto 0;
+}
+
+.tweet-button-small {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.tweet-button-deactivated {
+    background-color: #1da0f2b6;
 }
 
 .prompt-tweet input{
     /* height: 50px; */
+    margin: auto 0;
     background-color: #000;
+    color: white;
     border: none;
     font-size: 20px;
     height: 25px;
 }
+
+.prompt-tweet input:focus {
+    outline: none;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -9px;
+}
+
+
+
+.prompt-tweet .icon-grid {
+    margin-top: 9px;    
+}
+
+.prompt-tweet hr {
+    margin-left: 74px;
+    margin-right: 24px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border: rgba(255, 255, 255, 0.2) solid 1px; */
+    border: none;
+}
+
+.temp-icon {
+    display:inline-block; 
+    height: 18px; 
+    width: 18px; 
+    border: #1DA1F2 solid 2px;
+    border-radius: 25%;
+    margin: auto 8px;
+}
+
+
 
 .profile-badge h1 {
     font-size: 15px;

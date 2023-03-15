@@ -2,33 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-import { background } from '../Colors';
 import "./HomeScreenStyle.css";
 import ProfileBadge from './ProfileIcon';
+import { ToggleSwitch } from './Toggle';
 import { PromptTweet, StaticTweetComp } from './Tweet';
-const backgroundStyle = {
-    backgroundColor: background,
-    height: "100vh",
-}
 
-const sidebarStyle = {
-    "width": "30%",
-    "height": "100vh",
-    
-}
-
-const navTabStyle = {
-    "color": "#fff",
-    "height": "52px",
-    "lineHeight": "52px",
-    "fontWeigth": "bold",
-    "fontSize": "20px",
-    "borderRadius": "25px"
-}
-
-const navTabStyleOnHover = {
-    "backgroundColor": "red"
-}
 
 
 
@@ -56,51 +34,42 @@ function HomeScreen()  {
             });
     },[count]);
 
-    let tweet = 0;
-    // getTweet(1).then(resp => console.log(resp));
-    // console.log(tweet);
-
   return (
-    <div style={backgroundStyle}>
+    <div className="homescreen-div">
         <div className="sidebar">
-
             <div className="navTab">
                 Home
             </div>
+            <br></br>
             <div className="navTab">
                 Explore
             </div>
+            <br></br>
             <div className="navTab">
                 Notifications
             </div>
+            <br></br>
             <div className="navTab">
                 Messages
             </div>
+            <br></br>
             <div className="navTab">
                 Bookmarks
             </div>
+            <br></br>
             <div className="navTab">
                 Twitter Blue
             </div>
+            <br></br>
             <div className="navTab">
                 Profile
             </div>
+            <br></br>
             <div className="navTab">
                 More
             </div>
-            <button onClick={() => {
-                /*
-                fetch('https://reqbin.com/echo/post/json', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                    body: JSON.stringify({ "id": 78912 })
-                })
-                .then(response => response.json())
-                .then(response => console.log(JSON.stringify(response)))
-                */
+            <br></br>
+            {/* <button onClick={() => {
                 fetch("signup", {
                     method: "POST",
                     body: JSON.stringify({
@@ -116,20 +85,8 @@ function HomeScreen()  {
                   .then(response => response.json())
                   .then(data => console.log(data));
             }}>Click me</button>
-            <br></br>
-            <button onClick={() => {
-                /*
-                fetch('https://reqbin.com/echo/post/json', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                    body: JSON.stringify({ "id": 78912 })
-                })
-                .then(response => response.json())
-                .then(response => console.log(JSON.stringify(response)))
-                */
+            <br></br> */}
+            {/* <button onClick={() => {
                 fetch("home", {
                     method: "POST",
                     body: JSON.stringify({
@@ -141,9 +98,9 @@ function HomeScreen()  {
                   })
                   .then(response => response.json())
                   .then(data => console.log(data));
-            }}>Click me</button>
+            }}>Click me</button> */}
             <br></br>
-            <input type="text" id="tweet-content" placeholder='tweet'></input>                
+            {/* <input type="text" id="tweet-content" placeholder='tweet'></input>                 */}
             <div onClick={() => {
                 fetch("publishtweet", {
                     method: "POST",
@@ -185,59 +142,66 @@ function HomeScreen()  {
         </div>
         <div className="main-feed">
             <h1>Home</h1>
-            {PromptTweet()}
-            {tweets.map((tweet) => {
-                return StaticTweetComp({
-                    "user": user,
-                    "tweet": tweet
-                })
-            })}
+            <ToggleSwitch />
+            <div className="scroll-div">
+                {PromptTweet()}
+                {tweets.map((tweet) => {
+                    return StaticTweetComp({
+                        "user": user,
+                        "tweet": tweet
+                    })
+                })}
+                <div className="spacer"></div>
+            </div>
         </div>
         <div className="search-feed">
             {SearchBar()}
-            <div className="whats-happening-feed">
-                <h1>What's happening</h1>
-                <div className="story">
-                    <h3>NHL * LIVE</h3>
-                    <h2>Ducks at Canucks</h2>
-                    <h3>And that's it. They're just there.</h3>
+            <div className="scroll-div">
+                <div className="whats-happening-feed">
+                    <h1>What's happening</h1>
+                    <div className="story">
+                        <h3>NHL * LIVE</h3>
+                        <h2>Ducks at Canucks</h2>
+                        <h3>And that's it. They're just there.</h3>
+                    </div>
+                    <div className="story">
+                        <h3>NHL * LIVE</h3>
+                        <h2>Ducks at Canucks</h2>
+                        <h3>And that's it. They're just there.</h3>
+                    </div>
+                    <div className="story">
+                        <h3>NHL * LIVE</h3>
+                        <h2>Ducks at Canucks</h2>
+                        <h3>And that's it. They're just there.</h3>
+                    </div>
+                    <div className="story">
+                        <h3>NHL * LIVE</h3>
+                        <h2>Ducks at Canucks</h2>
+                        <h3>And that's it. They're just there.</h3>
+                    </div>
+                    <div className="story">
+                        <a href="www.google.com">Show more</a>
+                    </div>
                 </div>
-                <div className="story">
-                    <h3>NHL * LIVE</h3>
-                    <h2>Ducks at Canucks</h2>
-                    <h3>And that's it. They're just there.</h3>
+                <div className="whats-happening-feed">
+                    <h1>Who to follow</h1>
+                    <div className="story">
+                        <h2>Grizzy</h2>
+                        <h3>@SoGrizzy</h3>
+                    </div>
+                    <div className="story">
+                        <h2>Ted Nivison</h2>
+                        <h3>@TedNivison</h3>
+                    </div>
+                    <div className="story">
+                        <h2>ScaleFlux</h2>
+                        <h3>@ScaleFlux</h3>
+                    </div>
+                    <div className="story">
+                        <a href="www.google.com">Show more</a>
+                    </div>
                 </div>
-                <div className="story">
-                    <h3>NHL * LIVE</h3>
-                    <h2>Ducks at Canucks</h2>
-                    <h3>And that's it. They're just there.</h3>
-                </div>
-                <div className="story">
-                    <h3>NHL * LIVE</h3>
-                    <h2>Ducks at Canucks</h2>
-                    <h3>And that's it. They're just there.</h3>
-                </div>
-                <div className="story">
-                    <a href="www.google.com">Show more</a>
-                </div>
-            </div>
-            <div className="whats-happening-feed">
-                <h1>Who to follow</h1>
-                <div className="story">
-                    <h2>Grizzy</h2>
-                    <h3>@SoGrizzy</h3>
-                </div>
-                <div className="story">
-                    <h2>Ted Nivison</h2>
-                    <h3>@TedNivison</h3>
-                </div>
-                <div className="story">
-                    <h2>ScaleFlux</h2>
-                    <h3>@ScaleFlux</h3>
-                </div>
-                <div className="story">
-                    <a href="www.google.com">Show more</a>
-                </div>
+                <div className="spacer"></div>
             </div>
         </div>
     </div>

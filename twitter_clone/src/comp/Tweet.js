@@ -116,10 +116,42 @@ const dateObj = (timestamp) => {
 }
 
 export function PromptTweet(){
+    const [inFocus, setInFocus] = useState(false);
+    const [hasText, setHasText] = useState(false);
+
+
     return (
-        <div className="prompt-tweet">
-            <img className="profile-image" src="./image/1"></img>
-            <input type="text" placeholder="What's happening?"></input>
+        <div  className="prompt-tweet">
+            <div className="top-row">
+                <img className="profile-image" src="./image/1"></img>
+                <input 
+                onFocus={() => {
+                    setInFocus(true)
+                    setHasText(document.getElementById('tweet-content')?.value.length > 0)
+                }} 
+                onFocusOut={() => setHasText(document.getElementById('tweet-content')?.value.length > 0)} 
+                id="tweet-content" 
+                type="text" 
+                placeholder="What's happening?">
+                    
+                </input>
+            </div>
+            {inFocus ? <hr></hr> : null}
+            <div className="bottom-row">
+                <div className="icon-grid">
+                    <div className="temp-icon"></div>
+                    <div className="temp-icon"></div>
+                    <div className="temp-icon"></div>
+                    <div className="temp-icon"></div>
+                    <div className="temp-icon"></div>
+                    <div className="temp-icon"></div>
+                </div>
+                <div className="info-grid">
+                    <div className={
+                        hasText ? "tweet-button tweet-button-small" : "tweet-button tweet-button-small tweet-button-deactivated"
+                        }>Tweet</div>
+                </div>
+            </div>
         </div>
     );
 }
